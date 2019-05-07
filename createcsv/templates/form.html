@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+	<title>A form to create a CSV</title>
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+	<div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Submit</button>
+        </form>
+	</div>
+</body>
+
+</html>

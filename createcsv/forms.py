@@ -16,16 +16,16 @@ class CreateCsvForm(ModelForm):
         model = LocalPlans
         fields = ['name', 'organisation', 'entrydate', 'state']
 
-form =CreateCsvForm()
+# form =CreateCsvForm()
 
 
 
-class UpdateCsvForm(forms.Form):
-    # register = forms.CharField()
-
-    def __init__(self, *args, **kwargs):
-        extra = kwargs.pop('extra')
-        super(UpdateCsvForm, self).__init__(*args, **kwargs)
-
-        for i, heading in enumerate(extra):
-            self.fields['custom_%s' % i] = forms.CharField(label=heading)
+# class UpdateCsvForm(forms.Form):
+#     # register = forms.CharField()
+#
+#     def __init__(self, *args, **kwargs):
+#         extra = kwargs.pop('extra')
+#         super(UpdateCsvForm, self).__init__(*args, **kwargs)
+#
+#         for i, heading in enumerate(extra):
+#             self.fields['custom_%s' % i] = forms.CharField(label=heading)

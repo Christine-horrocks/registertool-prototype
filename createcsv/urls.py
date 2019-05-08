@@ -20,6 +20,6 @@ app_name = "createcsv"
 
 urlpatterns = [
     path("", views.homepage, name="homepage"),
-    path("update", views.updatepage, name="update"),
-    path("addinfopage", views.homepage, name="homepage")
+    path("updateform", views.updateform, name="updateform"),
+    path("uploadcomplete", views.uploadcomplete, name="uploadcomplete")
 ]

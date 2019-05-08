@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'registertool.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'lmvovudz',
+        'HOST': 'manny.db.elephantsql.com',
+        'USER': 'lmvovudz',
+        'PASSWORD': 'J1w1iaalehyikfIgAboxiX_uThO-4S4J',
+        'PORT': '5432'
     }
 }
 

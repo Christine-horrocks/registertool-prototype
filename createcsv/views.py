@@ -18,17 +18,6 @@ def homepage(request):
     form = CreateCsvForm()
     return render(request, 'form.html', {'form': form})
 
-def selectcsv(request):
-
-    if request.method == 'POST':
-        form = RequestCsv(request.POST)
-        if form.is_valid():
-            csv = form.cleaned_data['csv']
-            print(csv)
-
-    form = CreateCsvForm()
-    return render(request, 'form.html', {'form': form})
-
 
 def updatepage(request):
     extra_headings = ['first_name_schema', 'last_name_schema', 'head']

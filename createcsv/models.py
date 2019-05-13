@@ -1,5 +1,4 @@
 from django.db import models
-from django.forms import ModelForm
 
 class LocalPlans(models.Model):
     name = models.CharField(max_length=40)
@@ -10,7 +9,12 @@ class LocalPlans(models.Model):
     def __str__(self):
         return self.name
 
-# class CreateCsvForm(ModelForm):
-#     class Meta:
-#         model = LocalPlans
-#         fields = ['name', 'organisation', 'entrydate', 'state']
+
+class DeveloperContributions(models.Model):
+    developer_name= models.CharField(max_length=40)
+    local_authoriy_name = models.CharField(max_length= 40)
+    entry_date = models.DateField()
+    the_lovely_things_we_will_get = models.CharField(max_length=40)
+
+    def __str__(self):
+        return self.name

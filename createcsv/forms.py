@@ -18,4 +18,7 @@ class DeveloperContribuationsForm(forms.ModelForm):
     the_lovely_things_we_will_get = forms.CharField(widget=forms.Textarea)
     class Meta:
         model = DeveloperContributions
+        widgets = {
+            'developer_name': forms.TextInput(attrs= {'class': 'govuk-input'})
+        }
         fields = ['developer_name', 'local_authoriy_name', 'entrydate', 'the_lovely_things_we_will_get']

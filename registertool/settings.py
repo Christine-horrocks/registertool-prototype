@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'createcsv',
+    'dev_con',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

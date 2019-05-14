@@ -14,7 +14,7 @@ def homepage(request):
             return HttpResponseRedirect('updateform')
 
     form = PickModel()
-    return render(request, 'form.html', {'form': form})
+    return render(request, 'createcsv/form.html', {'form': form})
 
 def updateform(request):
 
@@ -27,12 +27,13 @@ def updateform(request):
 
 
     form = formpicker(category, request)
-    return render(request, 'update_form.html', {'form': form})
+    return render(request, 'createcsv/update_form.html', {'form': form})
 
 
 def uploadcomplete(request):
 
     return render(request, 'createcsv/home.html')
+
 
 def formpicker(choice, request):
 

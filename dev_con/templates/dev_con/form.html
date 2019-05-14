@@ -1,0 +1,27 @@
+{% extends "dev_con/form_base.html" %}
+
+{% block title %}Pick the register you want to update{% endblock %}
+
+{% block h1 %}
+        <div>
+            <h1 class="govuk-heading-xl">Welcome to Digital Land Registers</h1>
+            <p class="govuk-body">The place to be to update your cool and funky registers</p>
+        </div>
+{% endblock %}
+
+
+{% block form_heading %}
+    <h2 class="govuk-heading-l">Please select the register you wish to update</h2>
+{% endblock %}
+
+
+{% block form %}
+    <div>
+        <form method="post" class="govuk-form-group">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="govuk-button">Submit</button>
+        </form>
+    </div>
+{% endblock %}
+

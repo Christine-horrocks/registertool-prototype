@@ -1,0 +1,28 @@
+{% extends "dev_con/form_base.html" %}
+
+{% block title %}Update your register here{% endblock %}
+
+{% block h1 %}
+    <div>
+        <h1 class="govuk-heading-xl">Update your register here</h1>
+        <p class="govuk-body">Add all of your wonderful information</p>
+    </div>
+{% endblock %}
+
+
+{% block form_heading %}
+    <h2 class="govuk-heading-l">Make sure you follw the data rules</h2>
+{% endblock %}
+
+
+{% block form %}
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="govuk-button">Submit</button>
+    </form>
+</div>
+{% endblock %}
+
+

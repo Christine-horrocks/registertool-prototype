@@ -11,7 +11,7 @@
 
 
 {% block form_heading %}
-    <h2 class="govuk-heading-l">Make sure you follw the data rules</h2>
+    <h2 class="govuk-heading-l">Make sure you follow the data rules</h2>
 {% endblock %}
 
 
@@ -19,7 +19,12 @@
 <div>
     <form method="post">
         {% csrf_token %}
-        {{ form }}
+        {% load wtforms %}
+        {% form_field form.developer_agreement_transaction %}
+        {% form_field form.developer_agreement_contribution %}
+        {% form_field form.entry_date %}
+        {% form_field form.start_date %}
+        {% form_field form.end_date %}
         <button type="submit" class="govuk-button">Submit</button>
     </form>
 </div>

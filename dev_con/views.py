@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import PickCsvForm, DeveloperAgreementTransactionForm, DeveloperAgreementContributionForm, DeveloperAgreementForm
+from .forms import dynamic_form
 import csv
 
 def pick_csv(request):
@@ -16,6 +17,8 @@ def pick_csv(request):
     return render(request, 'dev_con/form.html', {'form': form})
 
 
+
+
 def add_entry(request):
 
     category = request.session.get('category')
@@ -27,8 +30,16 @@ def add_entry(request):
             return HttpResponseRedirect('entry_complete')
 
 
-    form = formpicker(category, request)
+    # form = formpicker(category, request)
+    form = dynamic_form()
     return render(request, 'dev_con/add_entry_form.html', {'form': form})
+
+
+
+
+
+
+
 
 
 def entry_complete(request):

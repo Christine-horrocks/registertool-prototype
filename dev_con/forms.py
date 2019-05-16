@@ -1,4 +1,5 @@
 from django import forms
+from django.shortcuts import render
 
 class PickCsvForm(forms.Form):
     category = forms.ChoiceField(choices=[('developer-agreement-contributions', 'Developer agreement contribution'),
@@ -58,3 +59,31 @@ class DeveloperAgreementTransactionForm(forms.Form):
     entry_date = forms.DateField(label='The date this record is being created')
     start_date = forms.DateField(label='The date this agreement comes into effect')
     end_date = forms.DateField(label='The date this agreement is no longer in effect')
+
+
+def dynamic_form():
+   from wtforms import StringField
+   from wtforms.fields.html5 import DateField
+   from .schema import json
+   from wtforms import Form
+
+   fields = {'string': StringField, 'date': DateField}
+
+   class DynamicForm(Form):
+
+       def __init__(self):
+           super().__init__()
+
+   # schema_url = request.args.get('schema')
+   # schema_json = requests.get(schema_url).json()
+   schema_json = json
+
+   for field in schema_json.get('fields'):
+       field_type = fields.get(field.get('type'))
+       if field_type is not None:
+           # you can also pass validators into field_type constructor below based on constraints element
+           f = field_type(field['title'])
+           setattr(DynamicForm, field['title'].lower().replace(' ', '_'), f)
+           print(f)
+
+   return DynamicForm()

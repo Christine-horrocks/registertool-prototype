@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'wtforms.ext.django',
+    'wtforms_django',
 ]
 
 MIDDLEWARE = [

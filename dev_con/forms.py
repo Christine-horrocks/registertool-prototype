@@ -64,10 +64,11 @@ class DeveloperAgreementTransactionForm(forms.Form):
 def dynamic_form():
    from wtforms import StringField
    from wtforms.fields.html5 import DateField
+   from wtforms import DecimalField
    from .schema import json
    from wtforms import Form
 
-   fields = {'string': StringField, 'date': DateField}
+   fields = {'string': StringField, 'date': DateField, 'number': DecimalField}
 
    class DynamicForm(Form):
 
